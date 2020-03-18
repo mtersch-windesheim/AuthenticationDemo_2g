@@ -10,6 +10,7 @@ namespace AuthenticationDemo_2g.Controllers
     [Authorize]
     public class ExampleController : Controller
     {
+        [AllowAnonymous]
         public IActionResult Public()
         {
             return View();
@@ -18,6 +19,7 @@ namespace AuthenticationDemo_2g.Controllers
         {
             return View();
         }
+        [Authorize(Roles = "alleskunner")]
         public IActionResult SpecificRoles()
         {
             return View();
